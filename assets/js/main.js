@@ -173,11 +173,11 @@
    */
   new Swiper(".clients-slider", {
     speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    loop: 1,
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     slidesPerView: "auto",
     pagination: {
       el: ".swiper-pagination",
@@ -198,7 +198,7 @@
         spaceBetween: 80,
       },
       992: {
-        slidesPerView: 6,
+        slidesPerView: 3,
         spaceBetween: 120,
       },
     },
@@ -249,10 +249,10 @@
    */
   new Swiper(".portfolio-details-slider", {
     speed: 400,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
@@ -265,11 +265,11 @@
    */
   new Swiper(".testimonials-slider", {
     speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    loop: 1,
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     slidesPerView: "auto",
     pagination: {
       el: ".swiper-pagination",
@@ -305,34 +305,73 @@
 })();
 
 $(document).ready(function () {
-  if ($(".bbb_viewed_slider").length) {
-    var viewedSlider = $(".bbb_viewed_slider");
+  if ($(".bbb_viewed_slider_abayas").length) {
+    var viewedSlider = $(".bbb_viewed_slider_abayas");
 
     viewedSlider.owlCarousel({
-      loop: true,
+      loop: 1,
       margin: 30,
-      autoplay: true,
-      autoplayTimeout: 6000,
+      // autoplay: true,
+      // autoplayTimeout: 6000,
       nav: false,
       dots: false,
       responsive: {
         0: { items: 1 },
         575: { items: 2 },
         768: { items: 3 },
-        991: { items: 4 },
-        1199: { items: 6 },
+        // 991: { items: 3 },
+        1199: { items: 4 },
       },
     });
 
-    if ($(".bbb_viewed_prev").length) {
-      var prev = $(".bbb_viewed_prev");
+    if ($(".bbb_viewed_prev_abayas").length) {
+      var prev = $(".bbb_viewed_prev_abayas");
       prev.on("click", function () {
         viewedSlider.trigger("prev.owl.carousel");
       });
     }
 
-    if ($(".bbb_viewed_next").length) {
-      var next = $(".bbb_viewed_next");
+    if ($(".bbb_viewed_next_abayas").length) {
+      var next = $(".bbb_viewed_next_abayas");
+      next.on("click", function () {
+        viewedSlider.trigger("next.owl.carousel");
+      });
+    }
+
+    
+  }
+});
+
+$(document).ready(function () {
+  if ($(".bbb_viewed_slider_dresses").length) {
+    var viewedSlider = $(".bbb_viewed_slider_dresses");
+
+    viewedSlider.owlCarousel({
+      loop: 1,
+      margin: 30,
+      // autoplay: true,
+      // autoplayTimeout: 6000,
+      nav: false,
+      dots: false,
+      responsive: {
+        0: { items: 1 },
+        575: { items: 2 },
+        768: { items: 3 },
+        // 991: { items: 3 },
+        1199: { items: 4 },
+      },
+    });
+ 
+
+    if ($(".bbb_viewed_prev_dresses").length) {
+      var prev = $(".bbb_viewed_prev_dresses");
+      prev.on("click", function () {
+        viewedSlider.trigger("prev.owl.carousel");
+      });
+    }
+
+    if ($(".bbb_viewed_next_dresses").length) {
+      var next = $(".bbb_viewed_next_dresses");
       next.on("click", function () {
         viewedSlider.trigger("next.owl.carousel");
       });
